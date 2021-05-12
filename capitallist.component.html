@@ -1,0 +1,31 @@
+<button class="btn btn-success" (click)="getCapitalById()">Capital Deatails</button>
+<br /><br />
+<div [hidden]="!found">
+  <mat-table  class="mat-elevation-z8">
+    <ng-container matColumnDef="cap_id">
+      <!--<mat-header-cell *matHeaderCellDef>Capital Id</mat-header-cell> -->
+      <mat-cell *matCellDef="let element">{{ capital.cap_id }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="property_name">
+      <!-- <mat-header-cell *matHeaderCellDef>Property Name</mat-header-cell> -->
+      <mat-cell *matCellDef="let element">{{ capital.property_name }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="property_value">
+      <!-- <mat-header-cell *matHeaderCellDef>Property Value</mat-header-cell> -->
+      <mat-cell *matCellDef="let element">{{ capital.property_value }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="location">
+      <!-- <mat-header-cell *matHeaderCellDef>Property location</mat-header-cell> -->
+      <mat-cell *matCellDef="let element">{{ capital.location }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="monthly_income">
+      <!-- <mat-header-cell *matHeaderCellDef>Monthly Income</mat-header-cell> -->
+      <mat-cell *matCellDef="let element">{{ capital.monthly_income }}</mat-cell>
+    </ng-container>
+         
+    
+
+  <mat-header-row *matHeaderRowDef="capital"></mat-header-row>
+  <mat-row  *matRowDef="let row; columns: capital;"></mat-row>
+</mat-table>
+</div>
