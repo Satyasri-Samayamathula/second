@@ -1,0 +1,47 @@
+<button class="btn btn-success" (click)="getLoanById()">Loan Deatails</button>
+<br /><br />
+<div [hidden]="!found">
+  <mat-table  class="mat-elevation-z8">
+    <ng-container matColumnDef="loan_id ">
+      <!--<mat-header-cell *matHeaderCellDef>Capital Id</mat-header-cell> -->
+      <mat-cell *matCellDef="let element">{{ loan.loan_id }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="loan_name">
+      <!-- <mat-header-cell *matHeaderCellDef>Property location</mat-header-cell> -->
+      <mat-cell *matCellDef="let element">{{ loan.loan_name }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="loan_tenure">
+      <!-- <mat-header-cell *matHeaderCellDef>Monthly Income</mat-header-cell> -->
+      <mat-cell *matCellDef="let element">{{ loan.loan_tenure }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="loan_principal">
+      <!-- <mat-header-cell *matHeaderCellDef>Property Value</mat-header-cell> -->
+      <mat-cell *matCellDef="let element">{{ loan.loan_principal }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="loan_interest_rate">
+      <!-- <mat-header-cell *matHeaderCellDef>Property Name</mat-header-cell> -->
+      <mat-cell *matCellDef="let element">{{ loan.loan_interest_rate }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="loan_emi">
+      <!-- <mat-header-cell *matHeaderCellDef>Monthly Income</mat-header-cell> -->
+      <mat-cell *matCellDef="let element">{{ loan.loan_emi }}</mat-cell>
+    </ng-container> 
+    
+    
+    <ng-container matColumnDef="loan_status">
+      <!-- <mat-header-cell *matHeaderCellDef>Monthly Income</mat-header-cell> -->
+      <mat-cell *matCellDef="let element">{{ loan.loan_status }}</mat-cell>
+    </ng-container>
+          
+    
+
+  <mat-header-row *matHeaderRowDef="loan"></mat-header-row>
+  <mat-row  *matRowDef="let row; columns: loan;"></mat-row>
+</mat-table>
+</div>
+
+
+
+
+
+
